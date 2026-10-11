@@ -10,6 +10,9 @@ import Animated, {
   withSpring,
   withTiming,
 } from "react-native-reanimated";
+import Easy from "../Phase1Examples/Easy";
+import ColorToggle from "../Phase1Examples/ColorToggle";
+import RotatingSquare from "../Phase1Examples/RotatingSquare";
 
 // Phase 1: Shared values and animations
 // Do the Phase 1 exercises from ../../../LEARNING_PATH.md here.
@@ -138,6 +141,12 @@ export default function Phase1() {
           </Animated.View>
         </View>
       </View>
+      <View style={styles.separator} />
+      <Easy />
+      <View style={styles.separator} />
+      <ColorToggle />
+      <View style={styles.separator} />
+      <RotatingSquare />
     </View>
   );
 }
