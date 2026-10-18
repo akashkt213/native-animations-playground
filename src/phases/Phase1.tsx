@@ -1,5 +1,12 @@
 import { useEffect, useState } from "react";
-import { Button, StyleSheet, Text, TextInput, View } from "react-native";
+import {
+  Button,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from "react-native";
 import Animated, {
   cancelAnimation,
   useAnimatedStyle,
@@ -13,6 +20,10 @@ import Animated, {
 import Easy from "../Phase1Examples/Easy";
 import ColorToggle from "../Phase1Examples/ColorToggle";
 import RotatingSquare from "../Phase1Examples/RotatingSquare";
+import Progressbar from "../Phase1Examples/Progressbar";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import Heartbeat from "../Phase1Examples/Heartbeat";
+import Bouncingball from "../Phase1Examples/Bouncingball";
 
 // Phase 1: Shared values and animations
 // Do the Phase 1 exercises from ../../../LEARNING_PATH.md here.
@@ -103,51 +114,64 @@ export default function Phase1() {
   }, []);
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.hint}>Phase 1: Shared values and animations</Text>
-      <View style={styles.section}>
-        <Animated.View style={[styles.box, toggleVisibilityAnimatedStyle]} />
-        <Button title="Toggle" onPress={toggle} />
-      </View>
+    <SafeAreaProvider>
+      <ScrollView>
+        <View style={styles.container}>
+          {/* <Text style={styles.hint}>Phase 1: Shared values and animations</Text>
+          <View style={styles.section}>
+            <Animated.View
+              style={[styles.box, toggleVisibilityAnimatedStyle]}
+            />
+            <Button title="Toggle" onPress={toggle} />
+          </View>
 
-      <View style={styles.separator} />
+          <View style={styles.separator} /> */}
 
-      <View style={styles.section}>
-        <Animated.View style={inputShakeAnimatedStyle}>
-          <TextInput
-            value={value}
-            onChangeText={setValue}
-            style={[
-              styles.input,
-              !value.trim() && submitted && styles.inputError,
-            ]}
-          />
-        </Animated.View>
-        <Button title="submit" onPress={handleInputSubmit} />
-      </View>
+          {/* <View style={styles.section}>
+            <Animated.View style={inputShakeAnimatedStyle}>
+              <TextInput
+                value={value}
+                onChangeText={setValue}
+                style={[
+                  styles.input,
+                  !value.trim() && submitted && styles.inputError,
+                ]}
+              />
+            </Animated.View>
+            <Button title="submit" onPress={handleInputSubmit} />
+          </View>
 
-      <View style={styles.separator} />
+          <View style={styles.separator} />
 
-      <View style={styles.section}>
-        <View style={styles.dotContainer}>
-          <Animated.View style={[dot1Style]}>
-            <Text>•</Text>
-          </Animated.View>
-          <Animated.View style={[dot2Style]}>
-            <Text>•</Text>
-          </Animated.View>
-          <Animated.View style={[dot3Style]}>
-            <Text>•</Text>
-          </Animated.View>
+          <View style={styles.section}>
+            <View style={styles.dotContainer}>
+              <Animated.View style={[dot1Style]}>
+                <Text>•</Text>
+              </Animated.View>
+              <Animated.View style={[dot2Style]}>
+                <Text>•</Text>
+              </Animated.View>
+              <Animated.View style={[dot3Style]}>
+                <Text>•</Text>
+              </Animated.View>
+            </View>
+          </View> */}
+          {/* <View style={styles.separator} />
+          <Easy /> */}
+          {/* <View style={styles.separator} />
+          <ColorToggle />
+          <View style={styles.separator} />
+          <RotatingSquare /> */}
+          <View style={styles.separator} />
+          <Progressbar />
+          <View style={styles.separator} />
+
+          <Heartbeat />
+          <View style={styles.separator} />
+          <Bouncingball />
         </View>
-      </View>
-      <View style={styles.separator} />
-      <Easy />
-      <View style={styles.separator} />
-      <ColorToggle />
-      <View style={styles.separator} />
-      <RotatingSquare />
-    </View>
+      </ScrollView>
+    </SafeAreaProvider>
   );
 }
 
